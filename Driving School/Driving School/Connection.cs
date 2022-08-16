@@ -42,7 +42,7 @@ namespace Driving_School
 
         private void Open()
         {
-            string connectionString = "Data Source=146.230.177.46;Initial Catalog=GroupWst4;User ID=GroupWst4;Password=ug2ff";
+            string connectionString = "Data Source=146.230.177.46;Initial Catalog=GroupWst4;User ID=GroupWst4;Password=**************";
             con = new SqlConnection(connectionString);
             con.Open();
         }
@@ -147,11 +147,6 @@ namespace Driving_School
             return !(res <= 0);
         }
 
-        public void DeleteCustomer()
-        {
-            string query = "";
-        }
-
         public int getClientId(string email)
         {
             string query = "SELECT client_id FROM Client WHERE email='" + email + "'";
@@ -160,11 +155,6 @@ namespace Driving_School
             dt = new DataTable();
             da.Fill(dt);
             return dt.Rows[0].Field<int>("client_id");
-        }
-
-        public void getCustomerEmail(int id)
-        {
-            string query = "";
         }
 
         public List<Object> getClientDetails(string email)
@@ -416,21 +406,6 @@ namespace Driving_School
 
             int count = com.ExecuteNonQuery();
             return !(count <= 0);
-        }
-
-        public void UpdateInstructor()
-        {
-            string query = "";
-        }
-
-        public void DeleteInstructor(int id)
-        {
-            string query = "DELETE FROM Instructor WHERE inst_id='" + id + "'";
-        }
-
-        public void getInstructorDetails()
-        {
-            string query = "";
         }
 
         public int getInstructorId(string email)
